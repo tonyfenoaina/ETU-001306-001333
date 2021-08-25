@@ -11,7 +11,7 @@ class Achat extends CI_Model{
 		return $produit;
 	}
 	public function insert_Achat($idCaisse,$idProduit,$quantite){
-		$sql = "INSERT INTO Achat VALUES (%s,%s,%s)";
+		$sql = "INSERT INTO Achat (idCaisse,idProduit,quantite) VALUES (%s,%s,%s)";
 		$sql = sprintf($sql,$this->db->escape($idCaisse),$this->db->escape($idProduit),$this->db->escape($quantite));
 		$this->db->query($sql);
 	}

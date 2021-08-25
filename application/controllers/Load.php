@@ -42,14 +42,30 @@ class Load extends Base_Controller {
 		$data['template'] = $page.'.php';
 		$this->load->view('template',$data);
 	}
+
+	public function template1($page,$data){
+		
+		$data['template'] = $page.'.php';
+		$this->load->view('template_accueil',$data);
+	}
+	public function get_input(){
+		$input = $this->input->post('category');
+		$session = $this->session->set_userdata('cate',$input);
+		return $input;
+	}
 	public function Saisie(){
 
 		$this->load->model('produit');
+		$this->load->model('category');
 		$this->load->model('achat');
 		$caisse = $this->session->userdata('caisse');
+		$cate_input = $this->session->userdata('cate');
+		//$input=$this->get_input();
 		$data['caisse'] = $caisse;
+
 		$data['liste_produit'] = $this->produit->get_All_Produit();
 		$data['liste_achat'] = $this->achat->getAchat($caisse);
+		$data['liste_category']=$this->category->get_All_Category();
 		$this->template('saisie',$data);
 	}
 	public function Valider_Commande(){
@@ -68,6 +84,27 @@ class Load extends Base_Controller {
 		$data['liste_achat'] = $this->achat->getAchat($caisse);
 		$this->template('saisie',$data);
 	}
+
+	public function Valider_Login(){
+
+		$this->load->model('achat');
+		$this->load->model('produit');
+		$this->load->model('client');
+		$user = $this->session->userdata('nom');
+		$mdp = $this->session->userdata('mdp');
+		$caisse = $this->session->userdata('caisse');
+		$data['caisse'] = $caisse;
+
+		$data['name'] = $user;
+		//$result=$this->client->login($user,$mdp);
+		$this->template1('accueil',$data);
+		
+		//$this->client->login ($user,$mdp);
+		
+		//$this->load->view('accueil',$data);
+
+	}
+
 	public function Changer_Caisse(){
 		$this->session->sess_destroy();
 		redirect(site_url());

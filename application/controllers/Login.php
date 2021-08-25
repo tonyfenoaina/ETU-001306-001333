@@ -23,29 +23,18 @@ class Accueil extends CI_Controller {
 	}
 
 	public function index(){
-
 		$this->load->helper('assets');
-		$data['caisse'] = $this->session->userdata('caisse');
-		$data['idpersonne'] = $this->session->userdata('nom');
+		$data['idpersonne'] = $this->session->userdata('caisse');
 		$data['template'] = 'login.php';
 		$this->load->view('template_accueil',$data);
-		}
-
-	public function Choix_Caisse(){
-		$caisse = $this->input->post('caisse');
-		$this->session->set_userdata('caisse',$caisse);
-		redirect(site_url('Load/Saisie'));
+		
 	}
-	
-	
 	public function mlog(){
 
 		$anarana = $this->input->post('email');
 		$mdp = $this->input->post('mdp');
 		$this->session->set_userdata('nom',$anarana);
-		$this->session->set_userdata('mdp',$mdp);
-
+		$this->session->set_userdata('nom',$mdp);
 		redirect(site_url('Load/Valider_Login'));
 	}
-
 }
