@@ -11,10 +11,10 @@
             <h3>Choisir caisse</h3>
             <form method="post" action="Accueil/Choix_Caisse">
               <p><select name="caisse">
-                <option value="1">Brialy</option>
-                <option value="2">Ericko</option>
-                <option value="3">Lova</option>
-                <option value="4">Henika</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
               </select></p>
               <p><input type="submit" class="btn" value="Valider"></p> 
             </form>

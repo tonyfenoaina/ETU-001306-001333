@@ -1,19 +1,42 @@
 create database caisse;
 use caisse;
  
+ create table category(
+	idCategory int not null auto_increment,
+	designationCategory varchar(50),
+	primary key(idCategory)
+);
+
+insert into category values("1","produitLaitier");
+insert into category values("2","produitCosmetique");
+insert into category values("3","patisserie");
+insert into category values("4","autre");
+
 create table Produit(
 	idProduit int not null auto_increment,
+	idCategory int,
 	designation varchar(50),
 	prixUnitaire decimal,
 	quantite int,
-	primary key(idProduit)
+	primary key(idProduit),
+	foreign key(idCategory) references category(idCategory)
 );
 
-insert into Produit values("001","Akanjo",120,30);
-insert into Produit values("002","Kilalao",200,20);
-insert into Produit values("003","Voanjo",90,10);
-insert into Produit values("004","Sakafo",200,7);
-insert into Produit values("005","Pepite",140,4);
+insert into Produit values("001",4,"Akanjo",120,30);
+insert into Produit values("002",4,"Kilalao",200,20);
+insert into Produit values("003",4,"Voanjo",90,10);
+insert into Produit values("004",4,"Sakafo",200,7);
+insert into Produit values("005",4,"Pepite",140,4);
+insert into Produit values("006",1,"Lait",70,2);
+insert into Produit values("007",3,"Pain",20,5);
+insert into Produit values("008",2,"Demaquillant",15,2);
+insert into Produit values("009",3,"Farine",45,1);
+insert into Produit values("010",3,"Riz",50,6);
+insert into Produit values("011",3,"Gateau",150,1);
+insert into Produit values("012",1,"Yaourt",35,10);
+insert into Produit values("013",2,"Pinceau",10,5);
+insert into Produit values("014",2,"Poudre",85,3);
+insert into Produit values("015",1,"Fromage",25,5);
 
 create table admin(
 	idAdmin int not null auto_increment,
@@ -54,17 +77,6 @@ create table Achat(
 );
 insert into Achat values("1","1","1","5");
 
-create table category(
-	idCategory int not null auto_increment,
-	idProduit int,
-	designationCategory varchar(50),
-	primary key(idCategory),
-	foreign key (idProduit) references Produit(idProduit)
-);
-
-insert into category values("1","1","produitLaitier");
-insert into category values("2","2","produitCosmetique");
-insert into category values("3","3","patisserie");
 
 
 
