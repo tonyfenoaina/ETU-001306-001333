@@ -21,6 +21,24 @@ create table Produit(
 	primary key(idProduit),
 	foreign key(idCategory) references category(idCategory)
 );
+alter table Produit add saryProd varchar(20);
+
+update Produit set saryProd=("assets/img/vetement.jpg") where idProduit=001;
+update Produit set saryProd=("assets/img/kilalao.jpg") where idProduit=002;
+update Produit set saryProd=("assets/img/voanjo.jpg") where idProduit=003;
+update Produit set saryProd=("assets/img/nouriture.jpg") where idProduit=004;
+update Produit set saryProd=("assets/img/pepite.jpg") where idProduit=005;
+update Produit set saryProd=("assets/img/lait.jpg") where idProduit=006;
+update Produit set saryProd=("assets/img/pain.jpg") where idProduit=007;
+update Produit set saryProd=("assets/img/demaq.jpg") where idProduit=008;
+update Produit set saryProd=("assets/img/farine.jpg") where idProduit=009;
+update Produit set saryProd=("assets/img/riz.jpg") where idProduit=010;
+update Produit set saryProd=("assets/img/cake.jpg") where idProduit=011;7
+update Produit set saryProd=("assets/img/ya.jpg") where idProduit=012;
+update Produit set saryProd=("assets/img/pinc.jpg") where idProduit=013;
+update Produit set saryProd=("assets/img/poudre.jpg") where idProduit=014;
+update Produit set saryProd=("assets/img/from.jpg") where idProduit=015;
+
 
 insert into Produit values("001",4,"Akanjo",120,30);
 insert into Produit values("002",4,"Kilalao",200,20);
