@@ -9,7 +9,7 @@
 
           <div class="col-md-12">
             <h3>Choisir caisse</h3>
-            <form method="post" action="Accueil/Choix_Caisse">
+            <form method="post" action="<?php echo site_url('Accueil/Choix_Caisse'); ?>">
               <p><select name="caisse">
                 <option value="1">1</option>
                 <option value="2">2</option>

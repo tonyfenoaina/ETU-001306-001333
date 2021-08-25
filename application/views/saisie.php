@@ -1,19 +1,22 @@
 
           <div class="col-md-12">
-
             <form method="post" action="Valider_Commande">
-              <p> <select name="produit">
+             
+
+                  <p> <select name="produit">
                     <?php for ($i=0; $i < count($liste_produit) ; $i++) { ?>
                      <option value="<?php echo $liste_produit[$i]['idProduit']; ?>"><?php echo $liste_produit[$i]['designation']; ?></option>                
                     <?php } ?>
                   </select></p>
+
                 <p><input type="number" name="quantite"></p>
-                <p><input type="submit" class="btn" value="Valider"></p> 
+                <p><input type="submit" class="btn" value="Ajouter Achat"></p> 
             </form>
           </div>
         <!-- /.row -->
         <div class="row">
           <div class="col-md-12">
+
             <table class="table">
               <table class="table">
                           <thead>

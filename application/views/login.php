@@ -1,3 +1,4 @@
+ 
 <div class="row">
 
       <div class="col-lg-3"></div>
@@ -8,11 +9,18 @@
         <div class="row">
 
           <div class="col-md-12">
-            <form method="post" action="Load/Test_Login">
-              <input type="text" name="email">
-              <input type="text" name="mdp">
+           
+                          CLIENT
+            <form method="post" action="Accueil/mlog">
+              LOGIN : <input type="text" name="email">
+            </br>
+            </br>
+              PASSWORD :<input type="text" name="mdp">
+            </br>
+            </br>
               <input type="submit" value="Valider">
             </form>
+            
           </div>
 
         </div>
@@ -22,4 +30,3 @@
       <!-- /.col-lg-9 -->
 
 </div>
-<!-- /.row -->
