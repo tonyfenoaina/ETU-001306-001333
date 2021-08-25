@@ -18,7 +18,7 @@ class Achat extends CI_Model{
 	public function getAchat($idCaisse){
 		$sql = "select Produit.designation as nomProduit,Produit.prixUnitaire as prixUnitaire,Achat.quantite as quantite,(Produit.prixUnitaire*Achat.quantite) as montant from Achat Join Produit on Achat.idProduit = Produit.idProduit where Achat.idCaisse = %s";
 		$sql = sprintf($sql,$this->db->escape($idCaisse));
-		echo "<br><br><br>".$sql;
+	
 		$query = $this->db->query($sql);
 		$produit = array();
 		foreach ($query->result_array() as $key) {
